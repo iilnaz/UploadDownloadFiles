@@ -26,6 +26,7 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, fmt.Sprintf("Uploaded File: %+v\n", header.Filename))
 	fmt.Fprintf(w, fmt.Sprintf("File Size: %+v\n", header.Size))
 	fmt.Fprintf(w, fmt.Sprintf("MIME Header: %+v\n", header.Header))
+
 	err = utils.ChunkFile(file, header)
 	if err != nil {
 		fmt.Println(err)
