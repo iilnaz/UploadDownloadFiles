@@ -1,0 +1,4 @@
+- A simple server written in pure Go.
+- It has two endpoints that make it possible to upload a file and download it.
+- When uploading the file is divided into pieces of 1 MB. If some piece is less than 1 MB, it is added to the required volume with zeros. This allows you to perform this action in parallel and store the pieces in different places.
+- When downloading, the files are merged back into one, insignificant zeros are removed.
